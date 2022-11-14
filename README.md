@@ -1,2 +1,3 @@
-# secel
-Parser for Simply Enough Conditional Expression Language
+# Simply Enough Conditional Expression Language parser
+
+**WORK IN PROGRESS**

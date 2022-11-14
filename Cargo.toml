@@ -1,0 +1,11 @@
+[package]
+name = "secel"
+version = "0.0.1"
+authors = ["seenees <code@seenees.de>"]
+description = "Simply Enough Conditional Expression Language parser"
+documentation = "https://docs.rs/secel"
+repository = "https://github.com/seenees/secel.git"
+license = "MIT"
+edition = "2021"
+
+[dependencies]
