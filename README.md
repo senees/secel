@@ -1,3 +1,3 @@
-# Simply Enough Conditional Expression Language parser
+# Simply Enough Conditional Expression Language Parser
 
 **WORK IN PROGRESS**
