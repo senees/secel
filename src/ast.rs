@@ -27,6 +27,7 @@
 use crate::IndexKey;
 use ascii_tree::{write_tree, Tree};
 
+/// Node of the abstract syntax tree.
 #[derive(Debug)]
 pub enum AstNode {
   /// Node representing conjunction operator `and`.

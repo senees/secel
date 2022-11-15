@@ -36,16 +36,17 @@ mod values;
 #[cfg(test)]
 mod tests;
 
-pub use evaluator::{IndexKey, IndexedValues};
+pub use ast::AstNode;
+pub use evaluator::{Evaluator, IndexKey, IndexedValues};
 pub use values::Value;
 
 /// Parses expression, panics on failure.
-pub fn parse_expression(input: &str) -> ast::AstNode {
+pub fn parse_expression(input: &str) -> AstNode {
   parser::Parser::new(input).parse().unwrap()
 }
 
 /// Builds evaluator, panics on failure.
-pub fn build_evaluator(input: &str) -> evaluator::Evaluator {
+pub fn build_evaluator(input: &str) -> Evaluator {
   let node = parser::Parser::new(input).parse().unwrap();
   evaluator::build_evaluator(&node).unwrap()
 }
