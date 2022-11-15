@@ -1,6 +1,6 @@
 [package]
 name = "secel"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["seenees <code@seenees.de>"]
 description = "Simply Enough Conditional Expression Language parser"
 documentation = "https://docs.rs/secel"
@@ -9,3 +9,6 @@ license = "MIT"
 edition = "2021"
 
 [dependencies]
+ascii_tree = "0.1.1"
+difference = "2.0.0"
+rust_decimal = "1.26.1"

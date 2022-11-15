@@ -22,30 +22,7 @@
  * SOFTWARE.
  */
 
-extern crate ascii_tree;
-extern crate difference;
-extern crate rust_decimal;
+//! Tests.
 
-mod ast;
-mod errors;
 mod evaluator;
-mod lexer;
 mod parser;
-mod values;
-
-#[cfg(test)]
-mod tests;
-
-pub use evaluator::{IndexKey, IndexedValues};
-pub use values::Value;
-
-/// Parses expression, panics on failure.
-pub fn parse_expression(input: &str) -> ast::AstNode {
-  parser::Parser::new(input).parse().unwrap()
-}
-
-/// Builds evaluator, panics on failure.
-pub fn build_evaluator(input: &str) -> evaluator::Evaluator {
-  let node = parser::Parser::new(input).parse().unwrap();
-  evaluator::build_evaluator(&node).unwrap()
-}

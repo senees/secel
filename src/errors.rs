@@ -22,30 +22,27 @@
  * SOFTWARE.
  */
 
-extern crate ascii_tree;
-extern crate difference;
-extern crate rust_decimal;
+//! Errors implementation.
 
-mod ast;
-mod errors;
-mod evaluator;
-mod lexer;
-mod parser;
-mod values;
+use std::fmt;
 
-#[cfg(test)]
-mod tests;
+/// Common result type.
+pub type Result<T, E = SecelError> = std::result::Result<T, E>;
 
-pub use evaluator::{IndexKey, IndexedValues};
-pub use values::Value;
+/// Common error definition.
+#[derive(Debug, PartialEq, Eq)]
+pub struct SecelError(String);
 
-/// Parses expression, panics on failure.
-pub fn parse_expression(input: &str) -> ast::AstNode {
-  parser::Parser::new(input).parse().unwrap()
+impl fmt::Display for SecelError {
+  /// Implementation of [Display](std::fmt::Display) trait for [SecelError].
+  fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> fmt::Result {
+    write!(f, "{}", self.0)
+  }
 }
 
-/// Builds evaluator, panics on failure.
-pub fn build_evaluator(input: &str) -> evaluator::Evaluator {
-  let node = parser::Parser::new(input).parse().unwrap();
-  evaluator::build_evaluator(&node).unwrap()
+impl SecelError {
+  /// Creates a new [SecelError] with specified message text.
+  pub fn new(message: &str) -> Self {
+    Self(message.to_string())
+  }
 }
