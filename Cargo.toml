@@ -1,10 +1,10 @@
 [package]
 name = "secel"
-version = "0.0.3"
-authors = ["seenees <code@seenees.de>"]
+version = "0.0.4"
+authors = ["senees <code@senees.de>"]
 description = "SECEL parser"
 documentation = "https://docs.rs/secel"
-repository = "https://github.com/seenees/secel.git"
+repository = "https://github.com/senees/secel.git"
 license = "MIT"
 edition = "2021"
 
