@@ -1,6 +1,6 @@
 [package]
 name = "secel"
-version = "0.0.4"
+version = "0.0.5"
 authors = ["senees <code@senees.de>"]
 description = "SECEL parser"
 documentation = "https://docs.rs/secel"
